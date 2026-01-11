@@ -53,7 +53,7 @@ public class DearYouPower extends AbstractPower {
         for (AbstractCard c : cards) {
             AbstractDungeon.player.hand.moveToExhaustPile(c);
         }
-        addToTop(new HealAction(this.owner, this.owner, cards.size()));
+        addToTop(new HealAction(this.owner, this.owner, cards.size() * 2));
         cards.clear();
     }
 

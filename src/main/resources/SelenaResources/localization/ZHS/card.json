@@ -307,7 +307,7 @@
   },
   "SelenaMod:DearYou": {
     "NAME": "Dear You",
-    "DESCRIPTION": "每回合开始时， 消耗 至多 !M! 张牌，回复等量生命值，无法在从牌组外获得除状态或诅咒牌以外的牌。",
+    "DESCRIPTION": "每回合开始时， 消耗 至多 !M! 张牌，回复两倍数量的生命值，无法在从牌组外获得除状态或诅咒牌以外的牌。",
     "FLAVOR": "“始于书信，敬于才华，合于性格，久于品德。”"
   },
   "SelenaMod:BurningVow": {

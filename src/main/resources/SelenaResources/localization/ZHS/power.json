@@ -256,7 +256,7 @@
   "SelenaMod:DearYouPower": {
     "NAME": "Dear you",
     "DESCRIPTIONS": [
-      "每回合开始时，消耗至多 #b%s 张牌，回复等量生命。无法再从牌组外获得除状态或诅咒以外的牌。"
+      "每回合开始时，消耗至多 #b%s 张牌，回复2倍数量的生命。无法再从牌组外获得除状态或诅咒以外的牌。"
     ]
   },
   "SelenaMod:BurningVowPower": {
