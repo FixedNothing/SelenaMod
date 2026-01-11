@@ -418,5 +418,11 @@
     "EXTENDED_DESCRIPTION": [
       "只能对生命值最低的角色使用"
     ]
+  },
+  "SelenaMod:ForTomorrow": {
+    "NAME": "为明天",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害，将 !M! 张 *奇迹 加入抽牌堆底部。",
+    "UPGRADE_DESCRIPTION": "对所有敌人造成 !D! 点伤害，将 !M! 张 *奇迹+ 加入抽牌堆底部。",
+    "FLAVOR": "“为了这希望，要使人练敏了感觉来更深切地感到自己的苦痛，叫起灵魂来目睹他自己的腐烂的尸骸。”"
   }
 }
