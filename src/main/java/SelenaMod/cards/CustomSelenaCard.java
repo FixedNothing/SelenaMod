@@ -7,6 +7,8 @@ import SelenaMod.powers.TonePower;
 import SelenaMod.powers.WhiteSpacePower;
 import SelenaMod.utils.ModHelper;
 import basemod.abstracts.CustomCard;
+import basemod.helpers.TooltipInfo;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -19,6 +21,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
+import java.util.List;
 import java.util.Objects;
 
 public abstract class CustomSelenaCard extends CustomCard {
@@ -136,5 +139,16 @@ public abstract class CustomSelenaCard extends CustomCard {
             ((CustomSelenaCard) card).firstSight = this.firstSight;
         }
         return card;
+    }
+
+    @Override
+    public void initializeDescription() {
+        super.initializeDescription();
+        this.keywords = this.keywords;
+    }
+
+    @Override
+    public void renderCardTip(SpriteBatch sb) {
+        super.renderCardTip(sb);
     }
 }
