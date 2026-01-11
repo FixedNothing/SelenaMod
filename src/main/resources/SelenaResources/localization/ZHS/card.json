@@ -410,5 +410,13 @@
     "DESCRIPTION": "获得等同于你已损失生命值数量的 格挡 （ !B! ）。 NL 虚无 ， 消耗 。",
     "UPGRADE_DESCRIPTION": "获得等同于你已损失生命值数量的 格挡 （ !B! ）。 NL 虚无 ， 消耗 。 NL selenamod:初见 ：给予所有敌人 !M! 层易伤。",
     "FLAVOR": "“我扶着剑儿，倚着马儿，不自主的流下几点英雄泪!”"
+  },
+  "SelenaMod:OneLastCaress": {
+    "NAME": "one last caress",
+    "DESCRIPTION": "造成 !M! 点 selenamod:生命值削减 ，令其本回合失去 !SelenaMod:SecondMagicVar! 点 力量 。 NL 只能以生命值最低的角色为目标。 NL 保留 。 虚无 。 消耗 。",
+    "FLAVOR": "“第一次到卢浮宫的时候，并没有什么特别的感受。独属于我的蒙娜丽莎，我早已经邂逅。”",
+    "EXTENDED_DESCRIPTION": [
+      "只能对生命值最低的角色使用"
+    ]
   }
 }
