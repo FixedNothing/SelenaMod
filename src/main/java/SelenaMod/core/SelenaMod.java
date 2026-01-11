@@ -10,10 +10,7 @@ import SelenaMod.potions.DeveloperFluid;
 import SelenaMod.potions.LoopLiquid;
 import SelenaMod.potions.RedTideSample;
 import SelenaMod.relics.*;
-import SelenaMod.utils.EffectsDynamicVariableManager;
-import SelenaMod.utils.ModHelper;
-import SelenaMod.utils.SaveHelper;
-import SelenaMod.utils.SecondMagicVar;
+import SelenaMod.utils.*;
 import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.abstracts.AbstractCardModifier;
@@ -162,6 +159,7 @@ public class SelenaMod implements ISubscriber, EditStringsSubscriber, EditKeywor
     public void receiveOnPlayerTurnStart() {
         LOSE_HP_THIS_TURN = false;
         DAMAGED_THIS_TURN=0;
+        CardMoveEventBus.GetInstance().onStartOfTurn();
     }
 
     private static void updateSelfQuestion() {

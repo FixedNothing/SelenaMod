@@ -75,7 +75,7 @@
   },
   "SelenaMod:IncomingLetter": {
     "NAME": "来信",
-    "DESCRIPTION": "无法被打出 。 NL selenamod:初见 ：将 !M! 张 *信 加入抽牌堆，然后 消耗 此牌。",
+    "DESCRIPTION": "无法被打出 。 NL 每回合 *信 第一次加入手牌时，这张牌从抽牌堆加入手牌并抽 !M! 张牌。",
     "UPGRADE_DESCRIPTION": "无法被打出 。 NL selenamod:初见 ：将 !M! 张 *信 加入手牌，然后 消耗 此牌。",
     "FLAVOR": "“亲爱的陌生人……”"
   },
