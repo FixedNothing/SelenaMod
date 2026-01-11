@@ -15,6 +15,7 @@ public class Vortex extends CustomSelenaCard{
         for (AbstractCard card : PREVIEW_CARDS) {
             MultiCardPreview.add(this, card.makeCopy());
         }
+        this.exhaust = true;
     }
 
     @Override

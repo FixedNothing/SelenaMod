@@ -301,8 +301,8 @@
   },
   "SelenaMod:Vortex": {
     "NAME": "环流",
-    "DESCRIPTION": "选择获得1张 *βurning_Vow 或 *Ðear_You 。",
-    "UPGRADE_DESCRIPTION": "选择获得1张 *βurning_Vow+ 或 *Ðear_You+ 。",
+    "DESCRIPTION": "选择获得1张 *βurning_Vow 或 *Ðear_You 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "选择获得1张 *βurning_Vow+ 或 *Ðear_You+ 。 NL 消耗 。",
     "FLAVOR": "我们合奏，分享彼此爱的独有"
   },
   "SelenaMod:DearYou": {
