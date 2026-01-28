@@ -3,10 +3,9 @@ package SelenaMod.cards;
 import SelenaMod.actions.PlayDiscardPailCardAction;
 import SelenaMod.actions.PlayDrawPailCardAction;
 import SelenaMod.actions.PlayHandCardAction;
-import SelenaMod.core.SelenaMod;
+import SelenaMod.effects.FiftyTwoHzEffect;
 import SelenaMod.modifiers.NotTriggerYourselfModifier;
 import SelenaMod.utils.ModHelper;
-import basemod.ReflectionHacks;
 import basemod.helpers.CardModifierManager;
 import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.OnObtainCard;
 import com.evacipated.cardcrawl.modthespire.lib.ByRef;
@@ -21,8 +20,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import com.megacrit.cardcrawl.vfx.FastCardObtainEffect;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,6 +46,7 @@ public class FiftyTwoHz extends CustomSelenaCard implements OnObtainCard{
 
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+        AbstractDungeon.effectList.add(new FiftyTwoHzEffect());
         addToBot(new MakeTempCardInHandAction(this.cardsToPreview.makeStatEquivalentCopy(),this.magicNumber));
         addCustomDamageAction(abstractMonster, AbstractGameAction.AttackEffect.LIGHTNING);
         addCustomBlockAction();
