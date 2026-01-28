@@ -218,7 +218,7 @@
   },
   "SelenaMod:Correspondence": {
     "NAME": "鸿爪",
-    "DESCRIPTION": "抽 !M! 张牌，本场战斗每打出1张 *信 数值+1。 NL 保留 ， 消耗 。",
+    "DESCRIPTION": "抽 !M! 张牌，本场战斗每打出2张 *信 数值+1。 NL 保留 ， 消耗 。",
     "FLAVOR": "春安，夏祺，秋绥，冬禧"
   },
   "SelenaMod:Cadenza": {
