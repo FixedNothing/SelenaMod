@@ -14,7 +14,7 @@ public class PhantomMelody extends CustomSelenaCard implements IFirstSight {
 
     public PhantomMelody() {
         super(ID, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-        this.setMagic(1);
+        this.setMagic(3);
         this.exhaust = true;
         this.selfRetain = true;
     }
