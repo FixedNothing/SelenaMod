@@ -355,7 +355,7 @@
   },
   "SelenaMod:FlowerTree": {
     "NAME": "花辞树",
-    "DESCRIPTION": "造成 !D! 点伤害。清除场上所有 格挡 ，否则获得 !B! 点 格挡 。 NL 回合结束时自动打出并 消耗 。",
+    "DESCRIPTION": "造成 !D! 点伤害。清除场上所有 格挡 ，否则获得 !B! 点 格挡 。 NL 回合结束时自动打出。 NL 消耗 。",
     "FLAVOR": "“What can I hold you with?”"
   },
   "SelenaMod:Idealism": {

@@ -26,6 +26,7 @@ public class FlowerTree extends CustomSelenaCard {
         super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         this.setDamage(24);
         this.setBlock(10);
+        this.exhaust = true;
     }
 
     @Override
