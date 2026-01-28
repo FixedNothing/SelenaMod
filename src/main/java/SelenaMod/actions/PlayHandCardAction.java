@@ -2,7 +2,6 @@ package SelenaMod.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
-import com.megacrit.cardcrawl.actions.utility.UnlimboAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
@@ -23,6 +22,7 @@ public class PlayHandCardAction extends AbstractGameAction {
     public void update() {
         if (this.duration == Settings.ACTION_DUR_FAST) {
             if (!card.isInAutoplay) {
+                AbstractDungeon.player.hand.removeCard(card);
                 this.card.applyPowers();
                 this.card.calculateCardDamage((AbstractMonster) this.target);
                 AbstractDungeon.getCurrRoom().souls.remove(this.card);
@@ -35,7 +35,7 @@ public class PlayHandCardAction extends AbstractGameAction {
                 card.target_y = (float) Settings.HEIGHT / 2.0F;
                 card.targetAngle=0.0F;
                 card.targetDrawScale=0.75F;
-                AbstractDungeon.player.limbo.group.add(this.card);
+//                AbstractDungeon.player.limbo.group.add(this.card);
 
                 card.isInAutoplay = true;
 

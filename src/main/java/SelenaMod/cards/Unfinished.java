@@ -22,7 +22,7 @@ public class Unfinished extends CustomSelenaCard {
     @Override
     protected void upgradeMethod() {
         this.upgradeDamage(2);
-        this.setSecondMagic(3);
+        this.setSecondMagic(9);
     }
 
     @Override

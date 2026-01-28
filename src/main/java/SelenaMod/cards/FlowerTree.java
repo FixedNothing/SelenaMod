@@ -1,6 +1,7 @@
 package SelenaMod.cards;
 
 import SelenaMod.actions.FlowerTreeAction;
+import SelenaMod.actions.PlayHandCardAction;
 import SelenaMod.utils.ModHelper;
 import SelenaMod.utils.TextureLoader;
 import basemod.ReflectionHacks;
@@ -46,6 +47,11 @@ public class FlowerTree extends CustomSelenaCard {
                 }
             }
         });
+    }
+
+    @Override
+    public void triggerOnEndOfTurnForPlayingCard() {
+        addToTop(new PlayHandCardAction(this, null));
     }
 
     @SpireOverride
