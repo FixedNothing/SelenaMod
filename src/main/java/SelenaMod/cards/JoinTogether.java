@@ -21,7 +21,7 @@ public class JoinTogether extends CustomSelenaCard {
     public static String ID = ModHelper.makeID("JoinTogether");
 
     public JoinTogether() {
-        super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.NONE);
+        super(ID, 3, CardType.SKILL, CardRarity.RARE, CardTarget.NONE);
         this.exhaust=true;
     }
 
