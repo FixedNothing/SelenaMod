@@ -3,19 +3,19 @@ package SelenaMod.cards;
 import SelenaMod.powers.JoinTogetherPower;
 import SelenaMod.utils.ModHelper;
 import SelenaMod.utils.SelenaEnums;
-import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsAction;
+import com.evacipated.cardcrawl.mod.stslib.actions.common.MultiGroupSelectAction;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsInHandAction;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 public class JoinTogether extends CustomSelenaCard {
     public static String ID = ModHelper.makeID("JoinTogether");
@@ -33,24 +33,21 @@ public class JoinTogether extends CustomSelenaCard {
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         if (this.upgraded) {
-            addToBot(new AbstractGameAction() {
-                @Override
-                public void update() {
-                    ArrayList<AbstractCard> cards = new ArrayList<>();
-                    cards.addAll(AbstractDungeon.player.drawPile.group);
-                    cards.addAll(AbstractDungeon.player.hand.group.stream().map(AbstractCard::makeSameInstanceOf).collect(Collectors.toList()));
-                    cards.addAll(AbstractDungeon.player.discardPile.group);
-                    cards.removeIf(c->c.cost==-1||c.hasTag(SelenaEnums.JOIN_TOGETHER));
-                    addToTop(new SelectCardsAction(cards, 2, "", true, c -> !c.tags.contains(SelenaEnums.JOIN_TOGETHER), JoinTogether.this::callback));
-                    this.isDone = true;
-                }
-            });
+            addToBot(new MultiGroupSelectAction("", this::callback, 2, false, this::check, CardGroup.CardGroupType.DRAW_PILE, CardGroup.CardGroupType.HAND, CardGroup.CardGroupType.DISCARD_PILE));
         } else {
-            addToBot(new SelectCardsInHandAction(2, "", false, false, c -> true, this::callback));
+            addToBot(new SelectCardsInHandAction(2, "", false, false, this::check, this::handcallback));
         }
     }
 
-    private void callback(List<AbstractCard> cards) {
+    private boolean check(AbstractCard card) {
+        return !card.hasTag(SelenaEnums.JOIN_TOGETHER);
+    }
+
+    private void callback(List<AbstractCard> abstractCards, Map<AbstractCard, CardGroup> abstractCardCardGroupMap) {
+
+    }
+
+    private void handcallback(List<AbstractCard> cards) {
         if (cards.size() == 2) {
             ArrayList<AbstractCard> cardsList = new ArrayList<>(cards);
             AbstractCard card = cardsList.get(0);
