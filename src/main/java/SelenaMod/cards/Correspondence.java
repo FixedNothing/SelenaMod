@@ -41,7 +41,7 @@ public class Correspondence extends CustomSelenaCard{
     }
 
     private void calMagicNumber() {
-        this.magicNumber = this.baseMagicNumber + this.letterNum / 2;
+        this.magicNumber = this.baseMagicNumber + (this.letterNum / 2) * 2;
         this.isMagicNumberModified=this.baseMagicNumber!=this.magicNumber;
     }
 }
