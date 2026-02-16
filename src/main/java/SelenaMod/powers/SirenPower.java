@@ -21,12 +21,19 @@ public class SirenPower extends AbstractPower {
     public static final String POWER_ID = ModHelper.makeID(SirenPower.class.getSimpleName());
     private static final PowerStrings strings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
 
+    public int hpOnEnter = -1;
     public SirenPower(AbstractCreature owner) {
         this.ID = POWER_ID;
         this.owner = owner;
         this.amount = -1;
         this.type = PowerType.BUFF;
         ModHelper.initPower(this);
+    }
+
+    @Override
+    public void onInitialApplication() {
+        super.onInitialApplication();
+        this.hpOnEnter = this.owner.currentHealth;
     }
 
     public static boolean IsInSiren() {

@@ -436,5 +436,11 @@
     "DESCRIPTION": "造成 !D! 点伤害 !M! 次，若这张牌没有斩杀，在本局游戏中伤害增加 !SelenaMod:SecondMagicVar! ，否则伤害次数在本场战斗中增加 !SelenaMod:SecondMagicVar! 。 NL 消耗 。",
     "UPGRADE_DESCRIPTION": "造成 !D! 点伤害 !M! 次，若这张牌没有斩杀，在本局游戏中伤害增加 !SelenaMod:SecondMagicVar! ，否则伤害次数在本场战斗中增加 !SelenaMod:SecondMagicVar! 。 NL 消耗 ， 保留 。",
     "FLAVOR": "“你若是能明白一个人在爱恋中的感觉，便能明白用空言来遏制这份灼热，是多么滑稽。”"
+  },
+  "SelenaMod:PeonyPavilion": {
+    "NAME": "“牡丹亭”",
+    "DESCRIPTION": "获得 !M! 层 残影 ，若此时处于 selenamod:塞壬 ，改为获得4点 敏捷 和1层幽魂形态。 NL 消耗 。 NL selenamod:覆写 ：退出 selenamod:塞壬 ，将生命调整至进入 selenamod:塞壬 时，移除所有负面状态。 消耗 。",
+    "UPGRADE_DESCRIPTION": "获得 !M! 层 残影 ，若此时处于 selenamod:塞壬 ，改为获得4点 敏捷 和1层幽魂形态。 NL 消耗 ， 保留 。 NL selenamod:覆写 ：退出 selenamod:塞壬 ，将生命调整至进入 selenamod:塞壬 时，移除所有负面状态。 消耗 。",
+    "FLAVOR": "“你若是能明白一个人在爱恋中的感觉，便能明白用空言来遏制这份灼热，是多么滑稽。”"
   }
 }

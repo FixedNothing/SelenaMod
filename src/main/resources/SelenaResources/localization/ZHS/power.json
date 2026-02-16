@@ -312,5 +312,11 @@
     "DESCRIPTIONS": [
       "下回合开始时失去1点能量。"
     ]
+  },
+  "SelenaMod:PeonyPavilionEffect": {
+    "NAME": "牡丹亭",
+    "DESCRIPTIONS": [
+      "退出 selenamod:塞壬 ，将生命调整至进入 selenamod:塞壬 时，移除所有负面状态。"
+    ]
   }
 }
