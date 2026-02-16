@@ -430,5 +430,11 @@
     "DESCRIPTION": "猜测抽牌堆顶第1张牌的牌名，猜测正确则获得之，并令其在本回合下次打出前耗能变为0，然后你可重复此流程。",
     "UPGRADE_DESCRIPTION": " 保留 。 NL 猜测抽牌堆顶第一张牌的牌名，猜测正确则获得之，并令其在本回合下次打出前耗能变为0，然后你可重复此流程。",
     "FLAVOR": "“人唯一无法舍弃的，就是被他者理解的渴望。”"
+  },
+  "SelenaMod:SeekFire": {
+    "NAME": "求火",
+    "DESCRIPTION": "造成 !D! 点伤害 !M! 次，若这张牌没有斩杀，在本局游戏中伤害增加 !SelenaMod:SecondMagicVar! ，否则伤害次数在本场战斗中增加 !SelenaMod:SecondMagicVar! 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害 !M! 次，若这张牌没有斩杀，在本局游戏中伤害增加 !SelenaMod:SecondMagicVar! ，否则伤害次数在本场战斗中增加 !SelenaMod:SecondMagicVar! 。 NL 消耗 ， 保留 。",
+    "FLAVOR": "“你若是能明白一个人在爱恋中的感觉，便能明白用空言来遏制这份灼热，是多么滑稽。”"
   }
 }
