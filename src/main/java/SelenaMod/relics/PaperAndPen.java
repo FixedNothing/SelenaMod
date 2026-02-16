@@ -28,28 +28,14 @@ public class PaperAndPen extends CustomRelic {
     }
 
     @Override
-    public void onCardDraw(AbstractCard drawnCard) {
-        super.onCardDraw(drawnCard);
-        if (!this.grayscale) {
-            addToBot(new DrawCardAction(1));
-            this.grayscale = true;
-        }
-    }
-
-    @Override
     public void atTurnStart() {
-        this.grayscale = false;
-    }
-
-    @Override
-    public void atBattleStart() {
-        this.grayscale = false;
+        addToBot(new DrawCardAction(1));
     }
 
     @Override
     public void onPlayCard(AbstractCard c, AbstractMonster m) {
         if(c instanceof Letter){
-            addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new VigorPower(AbstractDungeon.player,3)));
+            addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new VigorPower(AbstractDungeon.player, 2)));
         }
     }
 }
