@@ -6,6 +6,8 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
+import com.megacrit.cardcrawl.actions.unique.ExpertiseAction;
+import com.megacrit.cardcrawl.actions.unique.MadnessAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -46,6 +48,13 @@ public class SirenPower extends AbstractPower {
     }
 
     @Override
+    public void atStartOfTurn() {
+        addToBot(new ExpertiseAction(AbstractDungeon.player, 10));
+        addToBot(new MadnessAction());
+
+    }
+
+    @Override
     public void atEndOfTurn(boolean isPlayer) {
         if (isPlayer) {
             List<AbstractCard> letters = AbstractDungeon.player.hand.group.stream().filter(c -> c instanceof Letter).collect(Collectors.toList());
@@ -54,8 +63,6 @@ public class SirenPower extends AbstractPower {
                 addToBot(new ExhaustSpecificCardAction(card, AbstractDungeon.player.hand));
             } else {
                 addToBot(new DamageAction(AbstractDungeon.player, new DamageInfo(AbstractDungeon.player, GameActionManager.turn, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-
-//                addToBot(new LoseHPAction(AbstractDungeon.player, AbstractDungeon.player, GameActionManager.turn));
             }
         }
     }
