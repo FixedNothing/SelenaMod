@@ -40,7 +40,7 @@
   "SelenaMod:OffenseDefense": {
     "NAME": "刻舟",
     "DESCRIPTION": "造成 !D! 点伤害，给予所有敌人1层 易伤 。 NL 保留 。 NL 每次抽到时，对所有敌人造成 !SelenaMod:SecondMagicVar! 点伤害，获得 !M! 点 格挡 。",
-    "FLAVOR": "“我想要像盘旋的白鸽，在相遇时，再次降落在你的肩头。”"
+    "FLAVOR": "“无论时间的大钟如何流转，表盘上都只有一个刻度——现在。”"
   },
   "SelenaMod:Seeking": {
     "NAME": "求索",
