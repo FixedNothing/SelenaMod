@@ -9,6 +9,7 @@ public class ReduceCostThisTurnModifier extends AbstractCardModifier {
     public int amount;
     public int count;
     private int active = 0;
+    private boolean removed = false;
 
     public ReduceCostThisTurnModifier() {
         this(1, 1);
@@ -67,10 +68,15 @@ public class ReduceCostThisTurnModifier extends AbstractCardModifier {
 
     @Override
     public void onRemove(AbstractCard card) {
-        super.onRemove(card);
-        card.cost += this.active;
-        card.costForTurn = card.cost;
-        card.isCostModified = false;
+        if (!this.removed) {
+            super.onRemove(card);
+            card.cost += this.active;
+            ModHelper.logger.info("remove ReduceCostThisTurnModifier{}:{},current cost is {}", card.name, card.uuid, card.cost);
+            card.costForTurn = card.cost;
+            card.isCostModified = false;
+        }
+        this.removed = true;
+
     }
 
     @Override

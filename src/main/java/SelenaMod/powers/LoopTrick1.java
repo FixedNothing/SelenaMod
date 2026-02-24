@@ -50,12 +50,12 @@ public class LoopTrick1 extends AbstractPower implements OnCreateCardInterface {
 
     @Override
     public void onRemove() {
-        CardGroup[] groups = new CardGroup[]{AbstractDungeon.player.drawPile, AbstractDungeon.player.discardPile, AbstractDungeon.player.hand};
-        for (CardGroup g : groups) {
-            for (AbstractCard card : g.group) {
-                CardModifierManager.removeModifiersById(card, ReduceCostThisTurnModifier.ID, false);
-            }
-        }
+//        CardGroup[] groups = new CardGroup[]{AbstractDungeon.player.drawPile, AbstractDungeon.player.discardPile, AbstractDungeon.player.hand};
+//        for (CardGroup g : groups) {
+//            for (AbstractCard card : g.group) {
+//                CardModifierManager.removeModifiersById(card, ReduceCostThisTurnModifier.ID, false);
+//            }
+//        }
     }
 
     @Override
