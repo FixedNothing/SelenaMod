@@ -24,7 +24,7 @@ public class DivineComedy extends CustomSelenaCard {
 
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        addPowerToSelf(new DivineComedyPower(abstractPlayer, 1));
+        addPowerToSelf(new DivineComedyPower(abstractPlayer, this.secondMagicVar));
         addTonePower(new OverridePower(abstractPlayer, this.magicNumber, new DivineComedyEffect(this.cardID, this.magicNumber)),abstractMonster);
     }
 }

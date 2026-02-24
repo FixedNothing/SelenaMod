@@ -1,8 +1,8 @@
 package SelenaMod.cards;
 
 import SelenaMod.cardEffects.DrawEffect;
+import SelenaMod.powers.SeekingPower;
 import SelenaMod.powers.TonePower;
-import SelenaMod.powers.WhiteSpacePower;
 import SelenaMod.utils.ModHelper;
 import SelenaMod.utils.SelenaEnums;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -27,6 +27,7 @@ public class Seeking extends CustomSelenaCard {
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addCustomDamageAction(abstractMonster, AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
+        addPowerToSelf(new SeekingPower(abstractPlayer, 1));
         addTonePower(new TonePower(abstractPlayer, this.magicNumber, new DrawEffect(Questing.QUESTING_SEEKING_ID, this.magicNumber)), abstractMonster);
     }
 }
