@@ -44,7 +44,24 @@ public class JoinTogether extends CustomSelenaCard {
     }
 
     private void callback(List<AbstractCard> abstractCards, Map<AbstractCard, CardGroup> abstractCardCardGroupMap) {
+        if (abstractCards.size() == 2) {
+            ArrayList<AbstractCard> cardsList = new ArrayList<>(abstractCards);
 
+            // 计算总费用并平均分配
+            int totalCost = cardsList.stream().mapToInt(c -> c.costForTurn).sum();
+            cardsList.forEach(c -> {
+                c.cost = totalCost / 2;
+                c.costForTurn = c.cost;
+                c.isCostModified = true;
+                c.tags.add(SelenaEnums.JOIN_TOGETHER);
+            });
+            
+            // 应用 JoinTogetherPower
+            addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
+                    new JoinTogetherPower(AbstractDungeon.player, cardsList.get(0), cardsList.get(1))));
+        } else {
+            ModHelper.logger.error("选择的卡牌数量不正确: " + abstractCards.size());
+        }
     }
 
     private void handcallback(List<AbstractCard> cards) {
