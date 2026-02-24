@@ -1,11 +1,8 @@
 package SelenaMod.patches;
 
-import SelenaMod.character.Selena;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.RelicLibrary;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,16 +10,25 @@ import java.util.Map;
 public class ReturnRandomRelicPatch {
     public static final Map<String, String> replaceRelicMap = new HashMap<>();
 
-    @SpirePatch(clz = AbstractDungeon.class, method = "returnRandomRelic")
-    public static class ReturnRandomRelicPatchMethod {
+    @SpirePatch(clz = AbstractDungeon.class, method = "initializeRelicList")
+    public static class InitializeRelicListPatch {
         @SpirePostfixPatch
-        public static AbstractRelic Postfix(AbstractRelic ___result, AbstractRelic.RelicTier tier) {
-            if (AbstractDungeon.player instanceof Selena) {
-                if (replaceRelicMap.containsKey(___result.relicId)) {
-                    return RelicLibrary.getRelic(replaceRelicMap.get(___result.relicId)).makeCopy();
+        public static void Postfix(AbstractDungeon __instance) {
+            for (int i = 0; i < AbstractDungeon.commonRelicPool.size(); i++) {
+                if (replaceRelicMap.containsKey(AbstractDungeon.commonRelicPool.get(i))) {
+                    AbstractDungeon.commonRelicPool.set(i, replaceRelicMap.get(AbstractDungeon.commonRelicPool.get(i)));
                 }
             }
-            return ___result;
+            for (int i = 0; i < AbstractDungeon.uncommonRelicPool.size(); i++) {
+                if (replaceRelicMap.containsKey(AbstractDungeon.uncommonRelicPool.get(i))) {
+                    AbstractDungeon.uncommonRelicPool.set(i, replaceRelicMap.get(AbstractDungeon.uncommonRelicPool.get(i)));
+                }
+            }
+            for (int i = 0; i < AbstractDungeon.rareRelicPool.size(); i++) {
+                if (replaceRelicMap.containsKey(AbstractDungeon.rareRelicPool.get(i))) {
+                    AbstractDungeon.rareRelicPool.set(i, replaceRelicMap.get(AbstractDungeon.rareRelicPool.get(i)));
+                }
+            }
         }
     }
 }
